@@ -15,7 +15,7 @@ class UserDAO {
             // $rij is aanspreekbaar gemaakt
             if ($rij) {
                 $user = User::create($rij["id"], $rij["login"], $rij["paswoord"]);
-                // $user aanmaken 
+//                print "<br>User::create(".$rij["id"].", ".$rij["login"].", ".$rij["paswoord"].");<br>";
                 $dbh = NULL;
                 return $user;
             } else {
