@@ -22,11 +22,16 @@ class User {
     }
 
     public function getLogin() {
+        print("<br>getLogin<br>");
+        print_r(self::$idMap);
+        print("<br>getLogin<br>");
         return $this->login;
     }
 
     public function getPaswoord() {
+        print("<br>getPaswoord<br>");
         return $this->paswoord;
+        print("<br>getPaswoord<br>");
     }
     
 }
