@@ -9,13 +9,13 @@ class UserDAO {
         $sql = "SELECT id, login, paswoord  FROM gebruikers WHERE login='".$login."'";
         $dbh = new PDO(DBConfig::$DB_CONNSTRING, DBConfig::$DB_USERNAME, DBConfig::$DB_PASSWORD);
         $resultSet = $dbh->query($sql);
-        // $resultset = opgezochte rij uit DB met SQL
         if ($resultSet) {
             $rij = $resultSet->fetch();
-            // $rij is aanspreekbaar gemaakt
             if ($rij) {
                 $user = User::create($rij["id"], $rij["login"], $rij["paswoord"]);
-//                print "<br>User::create(".$rij["id"].", ".$rij["login"].", ".$rij["paswoord"].");<br>";
+                print "<br>userdao.class.php / class UserDAO / \$user = User::create(id:".$rij["id"].", login:".$rij["login"].", paswoord:".$rij["paswoord"]."); ==> "; // PRINT
+                print_r($user);
+                print "<br>";
                 $dbh = NULL;
                 return $user;
             } else {
