@@ -13,9 +13,6 @@ class UserDAO {
             $rij = $resultSet->fetch();
             if ($rij) {
                 $user = User::create($rij["id"], $rij["login"], $rij["paswoord"]);
-                print "<br>userdao.class.php / class UserDAO / \$user = User::create(id:".$rij["id"].", login:".$rij["login"].", paswoord:".$rij["paswoord"]."); ==> "; // PRINT
-                print_r($user);
-                print "<br>";
                 $dbh = NULL;
                 return $user;
             } else {

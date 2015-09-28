@@ -7,7 +7,7 @@ if (isset($_GET["action"]) AND $_GET["action"] === "login") {
        $_SESSION["login"] = TRUE; // Aangemeld blijven voor deze sessie
        header("location: 10-2-geheim.php");
    } else {
-       header("presentation/location: 10-2-loginform.php");
+       header("location: 10-2-aanmelden.php");
        exit(0);
    }
 } else {
