@@ -9,10 +9,11 @@ class User {
     private $paswoord;
 
     public static function create($id, $login, $paswoord) {
+
         if (!isset(self::$idMap[$id])) {
             self::$idMap[$id] = new User($id, $login, $paswoord);
         }
-        return self::$idMap;
+        return self::$idMap[$id];
     }
 
     public function __construct($id, $login, $paswoord) {
@@ -22,16 +23,11 @@ class User {
     }
 
     public function getLogin() {
-        print("<br>getLogin<br>");
-        print_r(self::$idMap);
-        print("<br>getLogin<br>");
         return $this->login;
     }
 
     public function getPaswoord() {
-        print("<br>getPaswoord<br>");
         return $this->paswoord;
-        print("<br>getPaswoord<br>");
     }
     
 }
