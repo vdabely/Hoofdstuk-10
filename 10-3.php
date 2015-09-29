@@ -40,8 +40,8 @@ class Rekening {
         try {
             print ("<p>Saldo: ".$rek->getsaldo()." &euro;</p>");
             $rek->storten(200);
-            $rek->storten(600);
-            $rek->storten(300);
+            $rek->storten(500);
+            $rek->storten(400);
             print ("<p>Saldo: ".$rek->getsaldo()." &euro;</p>");
         } catch (NegatieveStortingException $ex) {
             print ("<p>Een negatief bedrag storten is niet mogelijk!</p>");
