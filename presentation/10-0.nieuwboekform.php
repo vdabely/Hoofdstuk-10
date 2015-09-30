@@ -6,6 +6,13 @@
     </head>
     <body>
         <h1>Nieuw Boek Toevoegen</h1>
+        <?php 
+            if ($error == "titleexiss") {
+        ?>
+        <p style="color: red">Titel bestaat al</p>
+        <?php
+            }
+        ?>
         <form method="post" action="10-0-voegboektoe.php?action=process">
             <table>
                 <tr>
