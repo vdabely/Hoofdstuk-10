@@ -8,11 +8,11 @@ if ((isset($_GET["action"])) AND ($_GET["action"] == "process")) {
         BoekService::voegNieuwBoekToe($_POST["txtTitel"], $_POST["selGenre"]);
         header("location: 10-0-toonalleboeken.php");
     } catch (TitelBestaatException $tbe) {
-        header("location: 10-0-voegboektoe.php?error=titleexiss");
+        header("location: 10-0-voegboektoe.php?error=titleexists");
     }
     
 } else {
     $genreLijst = GenreService::toonAlleGenres();
-    $error = $_GET["error"];
+    if (isset($_GET["error"])) { $error = $_GET["error"]; } else { $error = ''; }
     include ("presentation/10-0.nieuwboekform.php");
 }
